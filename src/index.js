@@ -5,6 +5,6 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 render(
-  <h1>Hello, 123world!</h1>,
+  <h1>Hello, w12orld!</h1>,
   document.getElementById('root')
 );
