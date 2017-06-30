@@ -10,6 +10,25 @@ AV.init({
 
 export default AV
 
+export const TodoModel={
+  create({status,title,deleted},successFn,errorFn){
+    let Todo=AV.Object.extend('Todo');
+    let todo=new Todo;
+    todo.set("status",status)
+    todo.set("title",title)
+    todo.set("deleted",deleted)
+    todo.save().then(function (response) {
+    // 成功保存之后，执行其他逻辑.
+      successFn.call(null,response.id)
+    }, function (error) {
+      // 异常处理
+      errorFn&&errorFn.call(null,error)
+    })
+  }
+
+  
+}
+
 export function signUp(email,username,password,successFn,errorFn){
     // 新建 AVUser 对象实例
   var user = new AV.User();
