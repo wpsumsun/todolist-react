@@ -6,21 +6,6 @@ import TodoInput from './TodoInput.js';
 import TodoItem from './TodoItem.js';
 import UserDialog from './UserDialog';
 import {getCurrentUser,signOut} from './leanCloud';
-import AV from './leanCloud';
-
- // 声明类型
-  var TodoFolder = AV.Object.extend('TodoFolder');
-  // 新建对象
-  var todoFolder = new TodoFolder();
-  // 设置名称
-  todoFolder.set('name','学习');
-  // 设置优先级
-  todoFolder.set('priority',2);
-  todoFolder.save().then(function (todo) {
-    console.log('objectId is ' + todo.id);
-  }, function (error) {
-    console.error(error);
-  });
 
 class App extends Component {
   constructor(props){
