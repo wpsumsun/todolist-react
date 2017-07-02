@@ -45,6 +45,30 @@ export const TodoModel={
       // 异常处理
       errorFn&&errorFn.call(null,error)
     })
+  },
+
+  destroy(todoId,successFn,errorFn){
+     let todo = AV.Object.createWithoutData('Todo', 'todoId');
+      todo.destroy().then(function (response) {
+        // 删除成功
+        successFn && successFn.call(null)
+      }, function (error) {
+        // 删除失败
+        errorFn && errorFn.call(null,error)
+      })
+  },
+
+  update({id,title,status,deleted},successFn,errorFn){
+    // 第一个参数是 className，第二个参数是 objectId
+    var todo = AV.Object.createWithoutData('Todo', 'id');
+    // 修改属性
+    title!==undefined && todo.set('title',title)
+    status!==undefined && todo.set('status',status)
+    deleted!==undefined && todo.set('deleted',deleted)
+    // 保存到云端
+    todo.save().then((response)=>{
+      successFn && successFn.call(null)
+    },(error)=>errorFn && errorFn.call(null,error));
   }
 
   
