@@ -29,6 +29,15 @@ export const TodoModel={
     todo.set("status",status)
     todo.set("title",title)
     todo.set("deleted",deleted)
+
+     // 新建一个 ACL 实例
+    var acl = new AV.ACL();
+    acl.setPublicReadAccess(false);
+    acl.setWriteAccess(AV.User.current(),true);
+
+    // 将 ACL 实例赋予 Post 对象
+    todo.setACL(acl);
+
     todo.save().then(function (response) {
     // 成功保存之后，执行其他逻辑.
       successFn.call(null,response.id)
