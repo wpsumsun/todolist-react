@@ -80,7 +80,7 @@ class App extends Component {
   addTodo(event){
     let newTodo={
       title:event.target.value,
-      status:null,
+      status:'',
       deleted:false
     }
     TodoModel.create(newTodo,(id)=>{
@@ -122,6 +122,7 @@ class App extends Component {
       todo.deleted=true
       this.setState(this.state)
     })
+    console.log(todo.deleted)
   }
 
 }

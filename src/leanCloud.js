@@ -13,6 +13,7 @@ export default AV
 export const TodoModel={
   getByUser(user,successFn,errorFn){
     let query=new AV.Query('Todo')
+    query.equalTo('deleted', false);
     query.find().then((response)=>{
       let array=response.map((t)=>{
         return {id:t.id,...t.attributes}
@@ -25,7 +26,7 @@ export const TodoModel={
 
   create({status,title,deleted},successFn,errorFn){
     let Todo=AV.Object.extend('Todo');
-    let todo=new Todo;
+    let todo=new Todo();
     todo.set("status",status)
     todo.set("title",title)
     todo.set("deleted",deleted)
@@ -34,6 +35,7 @@ export const TodoModel={
     var acl = new AV.ACL();
     acl.setPublicReadAccess(false);
     acl.setWriteAccess(AV.User.current(),true);
+    acl.setReadAccess(AV.User.current(), true)
 
     // 将 ACL 实例赋予 Post 对象
     todo.setACL(acl);
@@ -48,14 +50,8 @@ export const TodoModel={
   },
 
   destroy(todoId,successFn,errorFn){
-     let todo = AV.Object.createWithoutData('Todo', 'todoId');
-      todo.destroy().then(function (response) {
-        // 删除成功
-        successFn && successFn.call(null)
-      }, function (error) {
-        // 删除失败
-        errorFn && errorFn.call(null,error)
-      })
+     // 我们不应该删除数据，而是将数据标记为 deleted
+     TodoModel.update({id: todoId, deleted: true}, successFn, errorFn)
   },
 
   update({id,title,status,deleted},successFn,errorFn){
