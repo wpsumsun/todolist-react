@@ -56,7 +56,7 @@ export const TodoModel={
 
   update({id,title,status,deleted},successFn,errorFn){
     // 第一个参数是 className，第二个参数是 objectId
-    var todo = AV.Object.createWithoutData('Todo', 'id');
+    var todo = AV.Object.createWithoutData('Todo', id);
     // 修改属性
     title!==undefined && todo.set('title',title)
     status!==undefined && todo.set('status',status)
