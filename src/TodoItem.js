@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import './TodoItem.css';
-import {Checkbox} from 'antd';
+import {Checkbox,Icon} from 'antd';
 import moment from 'moment';
 
 export default class TodoItem extends Component{
@@ -10,8 +10,12 @@ export default class TodoItem extends Component{
                 <Checkbox  checked={this.props.todo.status==='completed'}
                 onChange={this.toggle.bind(this)} />
                 <span className="title">{this.props.todo.title}</span>
-                <span>{this.props.curtime}</span>
-                <button onClick={this.delete.bind(this)}>删除</button>
+                <span className="time">{this.props.curtime}</span>
+                <Icon
+                className="itemDelete"
+                type="close-circle"
+                style={{ fontSize: 16, color: '#f04134',cursor:'pointer' }}
+                onClick={this.delete.bind(this)} />
             </div>
         )
     }
