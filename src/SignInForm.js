@@ -15,7 +15,7 @@ export default function (props) {
                     onChange={props.onChange.bind(null,'password')}/>
                 </div>
                 <div className="row actions">
-                    <button type="submit"className="btn">登录</button>
+                    <button type="submit" className="btn">登录</button>
                     <a href="javascript:;" onClick={props.onForgotPassword.bind(this)}>忘记密码？</a>
                 </div>
             </form>

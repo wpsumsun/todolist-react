@@ -57,6 +57,7 @@ export default class UserDialog extends Component{
         let {username,password}=this.state.formData
         let success=(user)=>{
             this.props.onSignIn.call(null,user)
+            window.location.reload()
         }
         let error=(error)=>{
             switch(error.code){
