@@ -1,41 +1,71 @@
 .UserDialog-Wrapper{ 
   /*全屏*/      position: fixed; top: 0; left: 0; bottom: 0; right: 0; 
   /*内容居中*/  display: flex; justify-content: center; align-items: center;
-  background:url(./indexBg.jpg) no-repeat center center;
+  background:url(./indexBg.png) no-repeat center center;
   background-size: cover;
 }
 .UserDialog{
   border: 1px solid;
   border-radius: 4px;
-  min-width: 30em;
+  min-width: 25em;
   background: white;
   border: 1px solid #aaa;
   box-shadow: 0 0 1em hsla(0,0%,0%,0.35);
+  text-align: center;
 }
 .UserDialog .signInOrSignUp > nav{
   height: 40px;
   line-height: 40px;
+  display: flex;
+  justify-content: space-around;
 }
 .UserDialog .signInOrSignUp > nav span{
   display: inline-block;
-  width: 50%;
+  width: 30%;
   text-align: center;
   height: 100%;
   line-height: 40px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 16px;
 }
 .UserDialog .signInOrSignUp > nav span.active{
-  border-bottom: 1px solid red;
+  border-bottom: 3px solid rgb(16,142,233);
+}
+.row>label{
+  display: inline-block;
+  width: 4em;
+  text-align: right;
+  margin-right: 1em;
+  line-height: 28px;
 }
 .UserDialog .signInOrSignUp > .panes { padding: 0 1em 1em; }
 
 .UserDialog .forgotPassword > h3 { padding: 1em; }
 .UserDialog .forgotPassword > form { padding: 0 1em 1em; }
 
-.UserDialog form>.row{ display: flex; padding: .3em 0; }
+.UserDialog form>.row{ display: flex; padding: .9em 0;justify-content:center;}
 .UserDialog form>.row>label:first-child{ width: 4em; }
-.UserDialog form>.row.actions{ padding-left: 4em; display: flex; align-items: center;}
-.UserDialog form>.row.actions button{ margin-right: .5em; }
-
-.UserDialog button{font: inherit; padding: .2em;}
+.UserDialog form>.row.actions{ display: flex; align-items: center;}
+.ant-input{
+  width: 60%;
+}
+.btn{
+  padding: 0 15px;
+  text-align: center;
+  height: 28px;
+  line-height: 1.5;
+  font-size: 12px;
+  background: #108ee9;
+  border: 1px solid #108ee9;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+.clearfix{
+  content: "";
+  display: block;
+  clear: both;
+}
+.row.actions a{
+  margin-left: 3em;
+}
