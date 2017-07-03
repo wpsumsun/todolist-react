@@ -24,12 +24,13 @@ export const TodoModel={
     })
   },
 
-  create({status,title,deleted},successFn,errorFn){
+  create({status,title,deleted,timer},successFn,errorFn){
     let Todo=AV.Object.extend('Todo');
     let todo=new Todo();
     todo.set("status",status)
     todo.set("title",title)
     todo.set("deleted",deleted)
+    todo.set("timer",timer)
 
      // 新建一个 ACL 实例
     var acl = new AV.ACL();
@@ -54,13 +55,14 @@ export const TodoModel={
      TodoModel.update({id: todoId, deleted: true}, successFn, errorFn)
   },
 
-  update({id,title,status,deleted},successFn,errorFn){
+  update({id,title,status,deleted,timer},successFn,errorFn){
     // 第一个参数是 className，第二个参数是 objectId
     var todo = AV.Object.createWithoutData('Todo', id);
     // 修改属性
     title!==undefined && todo.set('title',title)
     status!==undefined && todo.set('status',status)
     deleted!==undefined && todo.set('deleted',deleted)
+    timer!==undefined && todo.set('timer',timer)
     // 保存到云端
     todo.save().then((response)=>{
       successFn && successFn.call(null)
