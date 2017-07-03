@@ -1,18 +1,33 @@
 .UserDialog-Wrapper{ 
   /*全屏*/      position: fixed; top: 0; left: 0; bottom: 0; right: 0; 
   /*内容居中*/  display: flex; justify-content: center; align-items: center;
-  background: hsla(0,0%,0%,0.40);
+  background:url(./indexBg.jpg) no-repeat center center;
+  background-size: cover;
 }
 .UserDialog{
   border: 1px solid;
   border-radius: 4px;
-  min-width: 20em;
+  min-width: 30em;
   background: white;
   border: 1px solid #aaa;
   box-shadow: 0 0 1em hsla(0,0%,0%,0.35);
 }
-.UserDialog .signInOrSignUp > nav:first-child{ padding: 1em; margin-left: -2em;}
-.UserDialog .signInOrSignUp > nav:first-child label{ margin-left: 2em; cursor: pointer;}
+.UserDialog .signInOrSignUp > nav{
+  height: 40px;
+  line-height: 40px;
+}
+.UserDialog .signInOrSignUp > nav span{
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  height: 100%;
+  line-height: 40px;
+  cursor: pointer;
+  font-size: 18px;
+}
+.UserDialog .signInOrSignUp > nav span.active{
+  border-bottom: 1px solid red;
+}
 .UserDialog .signInOrSignUp > .panes { padding: 0 1em 1em; }
 
 .UserDialog .forgotPassword > h3 { padding: 1em; }

@@ -12,23 +12,24 @@ export default class SignInOrSignUp extends Component{
     
     switch(e){
         this.setState({
-            selected:e.target.value
+            selected:e.target.getAttribute('data-statuscur')
         })
+        console.log(e.target.getAttribute('data-statuscur'))
     }
     render(){
         return(
             <div className="signInOrSignUp">
                 <nav>
-                    <label>
-                        <input type="radio" value="signUp" 
-                        checked={this.state.selected === 'signUp'}
-                        onChange={this.switch.bind(this)}
-                        /> 注册</label>
-                    <label>
-                        <input type="radio" value="signIn" 
-                        checked={this.state.selected === 'signIn'}
-                        onChange={this.switch.bind(this)}
-                        /> 登录</label>
+                    <span data-statuscur="signUp" 
+                        className={this.state.selected === 'signUp' ? "active" : ""}
+                        onClick={this.switch.bind(this)}>
+                        注册
+                    </span>
+                    <span data-statuscur="signIn" 
+                        className={this.state.selected === 'signIn' ? "active" : ""}
+                        onClick={this.switch.bind(this)}>
+                        登录
+                    </span>
                 </nav>
                 <div className="panes">
                     {this.state.selected === 'signUp' ? 

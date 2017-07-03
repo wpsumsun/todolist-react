@@ -4,12 +4,14 @@
   "private": true,
   "homepage": "https://wpsumsun.github.io/todolist-react/build",
   "dependencies": {
+    "antd": "^2.11.2",
     "leancloud-storage": "^3.0.0",
     "normalize.css": "^7.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
+    "babel-plugin-import": "^1.2.1",
     "react-scripts": "1.0.7"
   },
   "scripts": {

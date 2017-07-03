@@ -1,5 +1,7 @@
 import React , {Component} from 'react';
-import './TodoInput.css';
+import { Input } from 'antd';
+import 'antd/dist/antd.css';
+import './TodoInput.css'
 
 
 function submit(props,e){
@@ -15,7 +17,9 @@ function changeTitle(props,e){
 
 export default function(props){
      return(
-         <input type='text' 
+         <Input type='text' 
+        placeholder="输入后回车即可创建"
+        size='large'
         className="TodoInput"
         value={props.content} 
         onChange={changeTitle.bind(null,props)}

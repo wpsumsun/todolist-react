@@ -15,3 +15,6 @@
 .App > .todoList> li:nth-child(even){
   background: transparent;
 }
+.App h1>button{
+  margin-left: 15px;
+}

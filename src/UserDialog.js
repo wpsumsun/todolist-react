@@ -3,6 +3,8 @@ import './UserDialog.css';
 import {signUp,signIn,sendPasswordResetEmail} from './leanCloud';
 import ForgotPasswordForm from './ForgotPasswordForm'
 import SignInOrSignUp from './SignInOrSignUp';
+import indexBg from './indexBg.jpg';
+
 
 export default class UserDialog extends Component{
     constructor(props){
