@@ -8,6 +8,7 @@ import UserDialog from './UserDialog';
 import {getCurrentUser,signOut,TodoModel} from './leanCloud';
 import {Button} from 'antd'; 
 import 'antd/dist/antd.css';
+import moment from 'moment';
 
 class App extends Component {
   constructor(props){
@@ -33,7 +34,10 @@ class App extends Component {
     .map((item,index)=>{
       return (
         <li key={index}>
-          <TodoItem todo={item} onToggle={this.toggle.bind(this)}
+          <TodoItem
+          todo={item}
+          curtime={item.timer}
+          onToggle={this.toggle.bind(this)}
           onDelete={this.delete.bind(this)} />
         </li>
       )
@@ -83,7 +87,8 @@ class App extends Component {
     let newTodo={
       title:event.target.value,
       status:'',
-      deleted:false
+      deleted:false,
+      timer:moment().format('M.D.YYYY, h:mm:ss')
     }
     TodoModel.create(newTodo,(id)=>{
       newTodo.id=id;
