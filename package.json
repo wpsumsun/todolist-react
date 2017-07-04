@@ -3,6 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://wpsumsun.github.io/todolist-react/build",
+  "plugins":[
+     [
+        "import",
+        [
+          {
+            "libraryName": "antd",
+            "libraryDirectory": "lib",   // default: lib
+            "style": true
+          },
+          {
+            "libraryName": "antd-mobile",
+            "libraryDirectory": "component"
+          }
+        ]
+      ]
+  ],
   "dependencies": {
     "antd": "^2.11.2",
     "leancloud-storage": "^3.0.0",

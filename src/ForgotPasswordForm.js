@@ -1,4 +1,6 @@
 import React,{Component} from 'react';
+import {Input,Button} from 'antd';
+import 'antd/dist/antd.css';
 
 export default class ForgotPasswordForm extends Component{
     render(){
@@ -8,12 +10,12 @@ export default class ForgotPasswordForm extends Component{
                 <form className="forgotPassword" onSubmit={this.props.onSubmit}>
                     <div className="row">
                         <label>邮箱</label>
-                        <input type="text" value={this.props.formData.email}
+                        <Input type="text" value={this.props.formData.email}
                         onChange={this.props.onChange.bind(null, 'email')}/>
                     </div>
                     <div className="row actions">
-                        <button type="submit" className="btn">发送重置邮件</button>
-                        <a href="" onClick={this.props.onSignIn}>返回登录</a>
+                        <Button htmlType="submit" type="primary" size="large">发送重置邮件</Button>
+                        <span onClick={this.props.onSignIn}>返回登录</span>
                     </div>
                 </form>
             </div> 

@@ -1,5 +1,6 @@
 import React from 'react';
-import {Input} from 'antd';
+import {Input,Button} from 'antd';
+import 'antd/dist/antd.css';
 
 export default function (props) {
     return(
@@ -15,8 +16,8 @@ export default function (props) {
                     onChange={props.onChange.bind(null,'password')}/>
                 </div>
                 <div className="row actions">
-                    <button type="submit" className="btn">登录</button>
-                    <a href="" onClick={props.onForgotPassword.bind(this)}>忘记密码？</a>
+                    <Button type="primary" htmlType="submit" size="large">登录</Button>
+                    <span onClick={props.onForgotPassword.bind(this)}>忘记密码？</span>
                 </div>
             </form>
         )

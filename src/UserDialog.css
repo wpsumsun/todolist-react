@@ -49,18 +49,6 @@
 .ant-input{
   width: 60%;
 }
-.btn{
-  padding: 0 15px;
-  text-align: center;
-  height: 28px;
-  line-height: 1.5;
-  font-size: 12px;
-  background: #108ee9;
-  border: 1px solid #108ee9;
-  border-radius: 4px;
-  color: #fff;
-  cursor: pointer;
-}
 .clearfix{
   content: "";
   display: block;
