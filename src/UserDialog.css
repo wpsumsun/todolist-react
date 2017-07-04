@@ -54,6 +54,8 @@
   display: block;
   clear: both;
 }
-.row.actions a{
+.row.actions>span{
   margin-left: 3em;
+  cursor: pointer;
+  color: #49a9ee;
 }

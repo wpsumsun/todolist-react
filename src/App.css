@@ -1,3 +1,6 @@
+#root{
+  background: #49a9ee;
+}
 .App {
   color: #333;
   border: 1px solid #aaa;
@@ -17,4 +20,17 @@
 }
 .App h1>button{
   margin-left: 15px;
+}
+.App .todosUnfinish{
+  color: rgb(240, 65, 52);
+  font-size: 20px;
+  line-height: 1.5;
+}
+.App .todosFinished{
+  color: green;
+  font-size: 20px;
+  line-height: 1.5;
+}
+.todoList{
+  margin-bottom: 15px;
 }

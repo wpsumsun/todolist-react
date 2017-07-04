@@ -24,8 +24,7 @@ export default class UserDialog extends Component{
     signUp(e){
         e.preventDefault()
         let {email,username,password}=this.state.formData
-        if(username)
-        if(email.indexOf('@')<0){
+        if(email.search(/^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/) < 0){
             message.warning("请输入正确格式的邮箱地址！", 1.5)
             return
         }

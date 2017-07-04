@@ -6,7 +6,7 @@ import TodoInput from './TodoInput.js';
 import TodoItem from './TodoItem.js';
 import UserDialog from './UserDialog';
 import {getCurrentUser,signOut,TodoModel} from './leanCloud';
-import {Button} from 'antd'; 
+import {Button,Icon} from 'antd'; 
 import 'antd/dist/antd.css';
 import moment from 'moment';
 
@@ -61,7 +61,11 @@ class App extends Component {
     return (
       <div className="App">
         <h1>{this.state.user.username||'我'}的待办
-          {this.state.user.id? <Button type="danger" onClick={this.signOut.bind(this)}>登出</Button> : null}
+        {this.state.user.id?  
+           <Icon type="logout"
+            style={{ fontSize: 20, color: 'rgb(240, 65, 52)',cursor:"pointer",marginLeft:5}} 
+            onClick={this.signOut.bind(this)} />
+          : null}
         </h1>
         <div className="inputWrapper">
           <TodoInput content={this.state.newTodo} 
@@ -69,7 +73,7 @@ class App extends Component {
           onChange={this.changeTitle.bind(this)} />
         </div>
         <ol className="todoList">
-          <span className="todosUnfinsh">未完成</span>
+          <span className="todosUnfinish">未完成</span>
           {todosUnfinish}
         </ol>
         <ol className="todoList">

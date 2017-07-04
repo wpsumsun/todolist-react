@@ -9,6 +9,7 @@
 }
 .time{
   font-size: 12px;
-  color: #666;
-  margin:0 10px -8px 0;
+  color: #999;
+  display: inline-block;
+  width: 11em;
 }
