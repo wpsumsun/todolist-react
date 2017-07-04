@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button,Input} from 'antd';
+import {Input} from 'antd';
 
 export default function (props){
         return(
@@ -22,7 +22,7 @@ export default function (props){
                     <label>密码</label>
                     <Input type="password"
                     placeholder="请输入密码"
-                     value={props.formData.password}
+                    value={props.formData.password}
                     onChange={props.onChange.bind(null,'password')}/>
                 </div>
                 <div className="row actions">

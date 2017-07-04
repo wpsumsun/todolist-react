@@ -43,10 +43,10 @@ export default class UserDialog extends Component{
         let error=(error)=>{
             switch(error.code){
                 case 202:
-                    alert('用户名已被占用')
+                    message.warning("用户名已被占用", 1.5)
                     break
                 default:
-                alert(error)
+                message.warning(error,1.5)
                 break
             }
         }
@@ -62,7 +62,7 @@ export default class UserDialog extends Component{
         let error=(error)=>{
             switch(error.code){
                 case 210:
-                    alert('用户名与密码不匹配')
+                    message.warning("用户名与密码不匹配", 1.5)
                     break
                 default:
                     alert(error)

@@ -29,8 +29,22 @@ class App extends Component {
   }
   
   render() {
-    let todos=this.state.todoList
-    .filter((item)=>!item.deleted)
+    let todosUnfinish=this.state.todoList
+    .filter( (item) => (!item.deleted && item.status==="") )
+    .map((item,index)=>{
+      return (
+        <li key={index}>
+          <TodoItem
+          todo={item}
+          curtime={item.timer}
+          onToggle={this.toggle.bind(this)}
+          onDelete={this.delete.bind(this)} />
+        </li>
+      )
+    })
+
+    let todosFinished=this.state.todoList
+    .filter((item)=>(!item.deleted && item.status==="completed"))
     .map((item,index)=>{
       return (
         <li key={index}>
@@ -55,7 +69,12 @@ class App extends Component {
           onChange={this.changeTitle.bind(this)} />
         </div>
         <ol className="todoList">
-          {todos}
+          <span className="todosUnfinsh">未完成</span>
+          {todosUnfinish}
+        </ol>
+        <ol className="todoList">
+          <span className="todosFinished">已完成</span>
+          {todosFinished}
         </ol>
         {this.state.user.id ? 
         null : 

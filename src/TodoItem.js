@@ -1,7 +1,6 @@
 import React,{Component} from 'react';
 import './TodoItem.css';
 import {Checkbox,Icon} from 'antd';
-import moment from 'moment';
 
 export default class TodoItem extends Component{
     render(){
