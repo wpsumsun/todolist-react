@@ -39,6 +39,7 @@ export default class UserDialog extends Component{
         }
         let success=(user)=>{
             this.props.onSignUp.call(null,user)
+            window.location.reload()
         }
         let error=(error)=>{
             switch(error.code){
