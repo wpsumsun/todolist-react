@@ -8,7 +8,7 @@ export default class TodoItem extends Component{
             <div className="TodoItem">
                 <Checkbox  checked={this.props.todo.status==='completed'}
                 onChange={this.toggle.bind(this)} />
-                <span className="title">{this.props.todo.title}</span>
+                <span className="title" title={this.props.todo.title}>{this.props.todo.title}</span>
                 <div>
                     <span className="time">
                     <Icon type="clock-circle-o"
